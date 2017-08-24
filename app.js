@@ -40,15 +40,15 @@ app.get('/', function(req,res){
 
 app.get('/export', function(req,res){
    
-    res.send("Test Get Export");
+    
    
-    /*filestring = exporter.render(exportjson, function(resp){
+    filestring = exporter.render(exportjson, function(resp){
         
            //res.send(resp);
          res.send("Test Get Export");
    
     
-    });*/
+
     
 });
 
