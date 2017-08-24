@@ -1,19 +1,18 @@
 {
-    "name": "highcharts",
-    "description": "",
-    "version": "1.0.0",
-    "private": true,
-    "author": "Tolerisk",
-    "engines": {
-        "node": ">=5.9.1"
-    },
-    "scripts": {
-        "start": "node app"
-    },
-    "dependencies": {
+  "name": "highcharts",
+  "description": "",
+  "version": "1.0.0",
+  "private": true,
+  "author": "Tolerisk",
+  "engines": {
+    "node": ">=5.9.1"
+  },
+  "scripts": {
+    "start": "node app"
+  },
+  "dependencies": {
     "body-parser": "^1.17.2",
     "express": "^4.15.4",
-    "highcharts-export-server": "*"
-    
+    "highcharts-export-server": "^2.0.0"
   }
 }
