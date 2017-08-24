@@ -6,7 +6,6 @@ const bodyParser = require('body-parser');
 
 //const exportjson = require('./chart.json');
 
-console.log(typeof exporter.render ); 
 
 const app = express();
 
@@ -34,7 +33,7 @@ app.get('/', function(req,res){
    
     res.send("Test Index");
     
-}
+});
         
 
 
