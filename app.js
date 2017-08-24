@@ -26,7 +26,7 @@ app.use(bodyParser.urlencoded({
 
 //console.log(JSON.stringify(exportSettings));
 
-console.log(exportjson);
+//console.log(exportjson);
 
 
 app.get('/', function(req,res){
