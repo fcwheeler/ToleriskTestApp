@@ -1,5 +1,5 @@
 //Export settings 
-const exporter = require('./node-export-server');
+const exporter = require('highcharts-export-server');
 
 
 module.exports = {
