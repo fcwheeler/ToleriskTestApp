@@ -4,7 +4,7 @@ const express = require('express');
 const exporter = require('./exporter');
 const bodyParser = require('body-parser');
 
-const exportjson = require('./chart.json');
+//const exportjson = require('./chart.json');
 
 console.log(typeof exporter.render ); 
 
@@ -30,9 +30,9 @@ app.use(bodyParser.urlencoded({
 console.log(exportjson);
 
 
-app.get('/export', function(req,res){
+app.get('/', function(req,res){
    
-    res.send("Test");
+    res.send("Test Index");
     
 }
         
@@ -45,8 +45,8 @@ app.get('/export', function(req,res){
    
     filestring = exporter.render(exportjson, function(resp){
         
-           res.send(resp);
-        
+           //res.send(resp);
+         res.send("Test Get Export");
    
     
     });
