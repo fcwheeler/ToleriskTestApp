@@ -1,7 +1,7 @@
 //Include the exporter module
 
 const express = require('express');
-const exporter = require('./exporter');
+//const exporter = require('./exporter');
 const bodyParser = require('body-parser');
 
 //const exportjson = require('./chart.json');
