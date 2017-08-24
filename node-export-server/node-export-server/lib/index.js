@@ -25,36 +25,25 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 */
 
-const request = require('request');
+require('colors');
 
-var sum = 0,
-    count = 0,
-    options = {
-        url: 'http://127.0.0.1:7801',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        method: 'POST',
-        body: JSON.stringify({"infile":{"title": {"text": "Steep Chart"}, "xAxis": {"categories": ["Jan", "Feb", "Mar"]}, "series": [{"data": [29.9, 71.5, 106.4]}]}})
-    }
-;
+const logger = require('./logger.js');
+const chart = require('./chart.js');
+const server = require('./server.js');
+const pool = require('./phantompool.js');
 
-function doTest(number) {
-    var start = (new Date()).getTime();
+module.exports = {
+    /** 
+     * @inherit logger.log
+     */
+    server: server,
+    logger: logger,
 
-    request.post(options,
-        function (err, r, res) {
-            var t = (new Date()).getTime() - start;
-            sum += t;
-            if (err) return console.log(number, 'returned error', err);
-            count++;
-            console.log(number, 'done. took', t, 'ms');
-        }
-    );
-}
-
-setInterval(function () {
-    for (var i = 0; i < 9; i++) {
-        doTest(i);
-    }
-}, 100);
+    log: logger.log,
+    export: chart,
+    startServer: server.start,
+    killPool: pool.kill,
+    initPool: pool.init,
+    logLevel: logger.setLogLevel,
+    enableFileLogging: logger.enableFileLogging
+};

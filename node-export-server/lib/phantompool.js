@@ -128,7 +128,7 @@ function spawnWorker(processQueueAfterCreation) {
     worker.process.stdin.setEncoding('utf-8');
     worker.process.stdout.setEncoding('utf-8');
 
-    worker.process.on('uncaughtException', function(err) {
+    worker.process.on('uncaughtException', (err) => {
       log(1, 'phantom worker exception', err);
       doDone('error when performing chart generation: please check your input data');
       worker.restart(true);
