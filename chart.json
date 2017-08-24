@@ -1,5 +1,5 @@
  {
-  "type":'png',
+  "type":"png",
 "options":{
      "plotOptions": {
          "column": {
