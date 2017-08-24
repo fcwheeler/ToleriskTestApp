@@ -4,7 +4,7 @@ const express = require('express');
 const exporter = require('./exporter');
 const bodyParser = require('body-parser');
 
-//const exportjson = require('./chart.json');
+const exportjson = require('./chart.json');
 
 
 const app = express();
