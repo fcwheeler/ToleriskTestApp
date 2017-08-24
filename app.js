@@ -30,6 +30,14 @@ app.use(bodyParser.urlencoded({
 console.log(exportjson);
 
 
+app.get('/export', function(req,res){
+   
+    res.send("Test");
+    
+}
+        
+
+
 
 app.get('/export', function(req,res){
    
