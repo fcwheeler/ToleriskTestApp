@@ -27,6 +27,28 @@ app.use(bodyParser.urlencoded({
 //console.log(JSON.stringify(exportSettings));
 
 //console.log(exportjson);
+var exportSettings = {
+    type: 'png',
+    options: {
+        title: {
+            text: 'My Chart'
+        },
+        xAxis: {
+            categories: ["Jan", "Feb", "Mar", "Apr", "Mar", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
+        },
+        series: [
+            {
+                type: 'line',
+                data: [1, 3, 2, 4]
+            },
+            {
+                type: 'line',
+                data: [5, 3, 4, 2]
+            }
+        ]
+    }
+};
+
 
 
 app.get('/', function(req,res){
@@ -42,7 +64,7 @@ app.get('/export', function(req,res){
    
     
    
-    filestring = exporter.render(exportjson, function(resp){
+    filestring = exporter.render(exportSettings , function(resp){
         
            //res.send(resp);
          res.send("Test Get Export");
